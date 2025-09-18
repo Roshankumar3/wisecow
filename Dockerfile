@@ -5,7 +5,7 @@ RUN apt-get update && \
     apt-get clean
 
 COPY wisecow.sh /wisecow.sh
-RUN chmod +x /wisecow.sh
+RUN chmod 755 /wisecow.sh
 
 EXPOSE 4499
 
