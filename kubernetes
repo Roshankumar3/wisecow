@@ -1,2 +1,22 @@
-root@ip-172-31-40-16:~/myproject1/myproject/Cow-wisdom-web-server/k8/mainfest# kubectl get deployment wisecow-deployment -o yaml | grep image: # show which image running
+1. CRETAE A CLUSTER 
+--name Cow-wisdom
+--region us-west-2
+--kubernetes-version 1.28
+--role-arn arn:aws:iam::455025092545:role/cow-wisdom \ 
+--resources-vpc-config subnetIds=XXXXXXXXXXXXXXXX,subnetIds=XXXXXXXXXXXXXXXX,securityGroupIds=XXXXXXXXXXXXXXXX
+
+2. CRETAE A NODEGROUP
+
+--cluster-name Cow-wisdom
+--nodegroup-name Cow-wisdom-nodes
+--subnets subnet-06632f49852d6f844 subnet-0314da887d8a1acde
+--node-role arn:aws:iam::455025092545:role/cow-wisecow-node
+--scaling-config minSize=1,maxSize=3,desiredSize=2
+--instance-types t3.medium 
+3. kubectl apply -f deployement.yaml
+4. kubectl apply -f service.yaml
+5. kubectl apply -f ingress.yaml 
+6. kubectl get nodes
+7. kubectl get svc
+kubectl get deployment wisecow-deployment -o yaml | grep image: # show which image running
       - image: roshan/wisecow:latest
