@@ -72,4 +72,9 @@ paste in browser a939ddf3cc3bc4ea88407535b83c7f53-521939326.us-west-2.elb.amazon
 output : image 
 
 
+Create a cloudwatch for log & monitor:
+<img width="1891" height="777" alt="image" src="https://github.com/user-attachments/assets/3f173f76-67e9-4b1f-852d-10b94340f56a" />
+
+
+
 
